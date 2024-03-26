@@ -1,0 +1,77 @@
+package com.example.dashboardbottommenu;
+
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
+
+import java.util.List;
+
+public class MyAdapter extends RecyclerView.Adapter<MyAdapter.HolderData> {
+
+        List<Item> listData;
+        LayoutInflater inflater;
+private ItemClickListener clickListener;
+
+public MyAdapter(Context context, List<Item> listData) {
+        this.listData = listData;
+        this.inflater = LayoutInflater.from(context);
+        }
+
+@NonNull
+@Override
+public MyAdapter.HolderData onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = inflater.inflate(R.layout.item_data, parent, false);
+        return new HolderData(view);
+        }
+
+@Override
+public void onBindViewHolder(@NonNull MyAdapter.HolderData holder, int position) {
+        Item item = listData.get(position);
+        holder.textShape.setText(item.getShape());
+
+        Glide.with(holder.itemView.getContext())
+        .load(item.getImage())
+        .into(holder.imageView);
+        }
+
+@Override
+public int getItemCount() {
+        return listData.size();
+        }
+
+public void setClickListener(ItemClickListener itemClickListener) {
+        this.clickListener = itemClickListener;
+        }
+
+public interface ItemClickListener {
+    void onItemClick(View view, int position);
+}
+
+public class HolderData extends RecyclerView.ViewHolder implements View.OnClickListener{
+
+    TextView textShape;
+    ImageView imageView;
+
+    public HolderData(@NonNull View itemView) {
+        super(itemView);
+
+        textShape = itemView.findViewById(R.id.shapeView);
+        imageView = itemView.findViewById(R.id.imageView);
+
+        itemView.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (clickListener != null) clickListener.onItemClick(v, getAdapterPosition());
+    }
+}
+}
