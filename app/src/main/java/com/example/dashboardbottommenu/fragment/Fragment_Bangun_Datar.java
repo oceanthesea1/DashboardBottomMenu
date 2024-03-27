@@ -34,26 +34,26 @@ public class Fragment_Bangun_Datar extends Fragment implements MyAdapter.OnItemC
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_bangun_datar, container, false);
-        recyclerView = rootView.findViewById(R.id.rvData);
+        recyclerView = rootView.findViewById(R.id.rvDataDatar);
         listData = new ArrayList<>();
 
         Item item1 = new Item();
-        item1.setShape("Persegi");
+        item1.setShape("Square");
         item1.setImage("https://c4.wallpaperflare.com/wallpaper/732/170/347/hololive-nakiri-ayame-hd-wallpaper-preview.jpg");
         listData.add(item1);
 
         Item item2 = new Item();
-        item2.setShape("Persegi Panjang");
+        item2.setShape("Rectangle");
         item2.setImage("https://c4.wallpaperflare.com/wallpaper/732/170/347/hololive-nakiri-ayame-hd-wallpaper-preview.jpg");
         listData.add(item2);
 
         Item item3 = new Item();
-        item3.setShape("Segitiga");
+        item3.setShape("Triangle");
         item3.setImage("https://c4.wallpaperflare.com/wallpaper/732/170/347/hololive-nakiri-ayame-hd-wallpaper-preview.jpg");
         listData.add(item3);
 
         Item item4 = new Item();
-        item4.setShape("Lingkaran");
+        item4.setShape("Circle");
         item4.setImage("https://c4.wallpaperflare.com/wallpaper/732/170/347/hololive-nakiri-ayame-hd-wallpaper-preview.jpg");
         listData.add(item4);
 
