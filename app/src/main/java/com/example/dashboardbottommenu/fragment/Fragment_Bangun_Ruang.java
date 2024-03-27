@@ -16,6 +16,7 @@ import com.example.dashboardbottommenu.MyAdapter;
 import com.example.dashboardbottommenu.R;
 import com.example.dashboardbottommenu.calculator1;
 import com.example.dashboardbottommenu.calculator2;
+import com.example.dashboardbottommenu.calculator3;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,9 +44,19 @@ public class Fragment_Bangun_Ruang extends Fragment implements MyAdapter.OnItemC
         listData.add(item1);
 
         Item item2 = new Item();
-        item2.setShape("Sphere");
+        item2.setShape("Rectangle");
         item2.setImage("https://c4.wallpaperflare.com/wallpaper/732/170/347/hololive-nakiri-ayame-hd-wallpaper-preview.jpg");
         listData.add(item2);
+
+        Item item3 = new Item();
+        item3.setShape("Cone");
+        item3.setImage("https://c4.wallpaperflare.com/wallpaper/732/170/347/hololive-nakiri-ayame-hd-wallpaper-preview.jpg");
+        listData.add(item3);
+
+        Item item4 = new Item();
+        item4.setShape("Sphere");
+        item4.setImage("https://c4.wallpaperflare.com/wallpaper/732/170/347/hololive-nakiri-ayame-hd-wallpaper-preview.jpg");
+        listData.add(item4);
 
         adapter = new MyAdapter(getContext(), listData);
         adapter.setOnItemClickListener(this);
@@ -64,6 +75,16 @@ public class Fragment_Bangun_Ruang extends Fragment implements MyAdapter.OnItemC
             intent.putExtra("shape1", shape);
             startActivity(intent);
         } else if (position == 1) {
+            String shape = listData.get(position).getShape();
+            Intent intent = new Intent(requireContext(), calculator3.class);
+            intent.putExtra("shape3", shape);
+            startActivity(intent);
+        } else if (position == 2) {
+            String shape = listData.get(position).getShape();
+            Intent intent = new Intent(requireContext(), calculator2.class);
+            intent.putExtra("shape2", shape);
+            startActivity(intent);
+        } else if (position == 3) {
             String shape = listData.get(position).getShape();
             Intent intent = new Intent(requireContext(), calculator1.class);
             intent.putExtra("shape1", shape);

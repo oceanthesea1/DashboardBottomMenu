@@ -13,58 +13,56 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class calculator2 extends AppCompatActivity {
+public class calculator3 extends AppCompatActivity {
 
-    TextView shapeText2, resultView2;
-    EditText inputParam2_1, inputParam2_2;
+    TextView shapeText3, resultView3;
+    EditText inputParam3_1, inputParam3_2, inputParam3_3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_calculator2);
+        setContentView(R.layout.activity_calculator3);
 
-        shapeText2 = findViewById(R.id.shapeName2);
-        inputParam2_1 = findViewById(R.id.inputParam2_1);
-        inputParam2_2 = findViewById(R.id.inputParam2_2);
-        resultView2 = findViewById(R.id.resultView2);
+        shapeText3 = findViewById(R.id.shapeName3);
+        inputParam3_1 = findViewById(R.id.inputParam3_1);
+        inputParam3_2 = findViewById(R.id.inputParam3_2);
+        inputParam3_3 = findViewById(R.id.inputParam3_3);
+        resultView3 = findViewById(R.id.resultView3);
 
         Intent intent = getIntent();
-        String shape = intent.getStringExtra("shape2");
+        String shape = intent.getStringExtra("shape3");
 
-        shapeText2.setText(shape);
+        shapeText3.setText(shape);
 
-        Button button1 = findViewById(R.id.button2);
+        Button button1 = findViewById(R.id.button3);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                calculateArea2(shape);
+                calculateArea3(shape);
             }
         });
     }
 
-    private void calculateArea2(String shape) {
-        String inputUser1 = inputParam2_1.getText().toString();
-        String inputUser2 = inputParam2_2.getText().toString();
+    private void calculateArea3(String shape) {
+        String inputUser1 = inputParam3_1.getText().toString();
+        String inputUser2 = inputParam3_2.getText().toString();
+        String inputUser3 = inputParam3_3.getText().toString();
         if (!inputUser1.isEmpty() && !inputUser2.isEmpty()) {
             double number1 = Double.parseDouble(inputUser1);
             double number2 = Double.parseDouble(inputUser2);
+            double number3 = Double.parseDouble(inputUser3);
             double area = 0;
             switch (shape) {
                 case "Rectangle":
-                    area = number1 * number2;
-                    break;
-                case "Triangle":
-                    area = 0.5 * number1 * number2;
-                    break;
-                case "Cone":
-                    area = 3.14 * number1 * number1 * (number2 / 3);
+                    area = number1 * number2 * number3;
                     break;
             }
             String resultArea = String.format("%.2f", area);
-            resultView2.setText("Area: " + resultArea);
+            resultView3.setText("Area: " + resultArea);
 
         } else {
-            resultView2.setText("Masukkan Angka");
+            resultView3.setText("Masukkan Angka");
         }
     }
+
 }
