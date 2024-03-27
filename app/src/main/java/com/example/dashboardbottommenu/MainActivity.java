@@ -1,7 +1,11 @@
 package com.example.dashboardbottommenu;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Adapter;
+import android.widget.AdapterView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -10,20 +14,23 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.example.dashboardbottommenu.fragment.Fragment_Bangun_Datar;
 import com.example.dashboardbottommenu.fragment.Fragment_Bangun_Ruang;
 import com.example.dashboardbottommenu.fragment.Fragment_Profile;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.ArrayList;
+
+public class MainActivity extends AppCompatActivity{
 
     private BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -34,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.bottom_navigation_view);
         bottomNavigationView.setOnItemSelectedListener(navListener);
 
-        // Load the default fragment
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.container, new Fragment_Bangun_Datar())
                 .commit();
@@ -46,11 +52,11 @@ public class MainActivity extends AppCompatActivity {
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                     Fragment selectedFragment = null;
 
-                    if (item.getItemId() == R.id.menu_item1) {
+                    if (item.getItemId() == R.id.menu_2d) {
                         selectedFragment = new Fragment_Bangun_Datar();
-                    } else if (item.getItemId() == R.id.menu_item2) {
+                    } else if (item.getItemId() == R.id.menu_3d) {
                         selectedFragment = new Fragment_Bangun_Ruang();
-                    } else if (item.getItemId() == R.id.menu_item3) {
+                    } else if (item.getItemId() == R.id.menu_profile) {
                         selectedFragment = new Fragment_Profile();
                     }
 
