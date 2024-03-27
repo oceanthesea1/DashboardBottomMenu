@@ -68,16 +68,24 @@ public class Fragment_Bangun_Datar extends Fragment implements MyAdapter.OnItemC
     @Override
     public void onItemClick(int position) {
         if (position == 0) {
+            String shape = listData.get(position).getShape();
             Intent intent = new Intent(requireContext(), calculator1.class);
+            intent.putExtra("shape1", shape);
             startActivity(intent);
         } else if (position == 1) {
+            String shape = listData.get(position).getShape();
             Intent intent = new Intent(requireContext(), calculator2.class);
+            intent.putExtra("shape2", shape);
             startActivity(intent);
         } else if (position == 2) {
+            String shape = listData.get(position).getShape();
             Intent intent = new Intent(requireContext(), calculator2.class);
+            intent.putExtra("shape2", shape);
             startActivity(intent);
         } else if (position == 3) {
+            String shape = listData.get(position).getShape();
             Intent intent = new Intent(requireContext(), calculator1.class);
+            intent.putExtra("shape1", shape);
             startActivity(intent);
         } else {
             Toast.makeText(requireContext(), "Item clicked: " + position, Toast.LENGTH_SHORT).show();
