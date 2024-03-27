@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 
 import java.util.List;
 
@@ -49,8 +50,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.HolderData> {
         holder.textShape.setText(item.getShape());
 
         Glide.with(holder.itemView.getContext())
-            .load(item.getImage())
-            .into(holder.imageView);
+                .load(item.getImage())
+                .into(holder.imageView);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -67,27 +67,36 @@ public class Fragment_Bangun_Ruang extends Fragment implements MyAdapter.OnItemC
 
     }
 
+    //Edit Gambar
     @Override
     public void onItemClick(int position) {
         if (position == 0) {
             String shape = listData.get(position).getShape();
             Intent intent = new Intent(requireContext(), calculator1.class);
             intent.putExtra("shape1", shape);
+            String imageLink = "https://cdn-icons-png.flaticon.com/512/73/73674.png";
+            intent.putExtra("image1", imageLink);
             startActivity(intent);
         } else if (position == 1) {
             String shape = listData.get(position).getShape();
             Intent intent = new Intent(requireContext(), calculator3.class);
             intent.putExtra("shape3", shape);
+            String imageLink = "https://cdn-icons-png.flaticon.com/512/73/73674.png";
+            intent.putExtra("image3", imageLink);
             startActivity(intent);
         } else if (position == 2) {
             String shape = listData.get(position).getShape();
             Intent intent = new Intent(requireContext(), calculator2.class);
             intent.putExtra("shape2", shape);
+            String imageLink = "https://cdn-icons-png.flaticon.com/512/73/73674.png";
+            intent.putExtra("image2", imageLink);
             startActivity(intent);
         } else if (position == 3) {
             String shape = listData.get(position).getShape();
             Intent intent = new Intent(requireContext(), calculator1.class);
             intent.putExtra("shape1", shape);
+            String imageLink = "https://cdn-icons-png.flaticon.com/512/73/73674.png";
+            intent.putExtra("image1", imageLink);
             startActivity(intent);
         } else {
             Toast.makeText(requireContext(), "Item clicked: " + position, Toast.LENGTH_SHORT).show();

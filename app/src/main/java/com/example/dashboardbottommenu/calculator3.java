@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -13,10 +14,13 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.bumptech.glide.Glide;
+
 public class calculator3 extends AppCompatActivity {
 
     TextView shapeText3, resultView3;
     EditText inputParam3_1, inputParam3_2, inputParam3_3;
+    ImageView imageParam3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,11 +32,17 @@ public class calculator3 extends AppCompatActivity {
         inputParam3_2 = findViewById(R.id.inputParam3_2);
         inputParam3_3 = findViewById(R.id.inputParam3_3);
         resultView3 = findViewById(R.id.resultView3);
+        imageParam3 = findViewById(R.id.imageParam3);
 
         Intent intent = getIntent();
         String shape = intent.getStringExtra("shape3");
+        String image = intent.getStringExtra("image3");
 
         shapeText3.setText(shape);
+
+        Glide.with(this)
+                .load(image)
+                .into(imageParam3);
 
         Button button1 = findViewById(R.id.button3);
         button1.setOnClickListener(new View.OnClickListener() {

@@ -5,14 +5,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 
 public class calculator1 extends AppCompatActivity {
 
     TextView shapeText1, resultView1;
     EditText inputParam1;
+    ImageView imageParam1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,11 +27,17 @@ public class calculator1 extends AppCompatActivity {
         shapeText1 = findViewById(R.id.shapeName1);
         inputParam1 = findViewById(R.id.inputParam1);
         resultView1 = findViewById(R.id.resultView1);
+        imageParam1 = findViewById(R.id.imageParam1);
 
         Intent intent = getIntent();
         String shape = intent.getStringExtra("shape1");
+        String image = intent.getStringExtra("image1");
 
         shapeText1.setText(shape);
+
+        Glide.with(this)
+                .load(image)
+                .into(imageParam1);
 
         Button button1 = findViewById(R.id.button1);
         button1.setOnClickListener(new View.OnClickListener() {
