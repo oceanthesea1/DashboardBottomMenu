@@ -5,5 +5,10 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
+    <style name="AppTheme.Button_Logout" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/button_logout</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
     <style name="Theme.DashboardBottomMenu" parent="Base.Theme.DashboardBottomMenu" />
 </resources>

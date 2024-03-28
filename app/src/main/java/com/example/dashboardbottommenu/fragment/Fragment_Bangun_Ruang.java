@@ -40,22 +40,22 @@ public class Fragment_Bangun_Ruang extends Fragment implements MyAdapter.OnItemC
 
         Item item1 = new Item();
         item1.setShape("Cube");
-        item1.setImage("https://c4.wallpaperflare.com/wallpaper/732/170/347/hololive-nakiri-ayame-hd-wallpaper-preview.jpg");
+        item1.setImage("https://cdn-icons-png.flaticon.com/512/73/73674.png");
         listData.add(item1);
 
         Item item2 = new Item();
         item2.setShape("Rectangle");
-        item2.setImage("https://c4.wallpaperflare.com/wallpaper/732/170/347/hololive-nakiri-ayame-hd-wallpaper-preview.jpg");
+        item2.setImage("https://static.thenounproject.com/png/375209-200.png");
         listData.add(item2);
 
         Item item3 = new Item();
         item3.setShape("Cone");
-        item3.setImage("https://c4.wallpaperflare.com/wallpaper/732/170/347/hololive-nakiri-ayame-hd-wallpaper-preview.jpg");
+        item3.setImage("https://static-00.iconduck.com/assets.00/cone-icon-2048x2046-7oncc3vw.png");
         listData.add(item3);
 
         Item item4 = new Item();
         item4.setShape("Sphere");
-        item4.setImage("https://c4.wallpaperflare.com/wallpaper/732/170/347/hololive-nakiri-ayame-hd-wallpaper-preview.jpg");
+        item4.setImage("https://static.thenounproject.com/png/104196-200.png");
         listData.add(item4);
 
         adapter = new MyAdapter(getContext(), listData);
@@ -81,21 +81,21 @@ public class Fragment_Bangun_Ruang extends Fragment implements MyAdapter.OnItemC
             String shape = listData.get(position).getShape();
             Intent intent = new Intent(requireContext(), calculator3.class);
             intent.putExtra("shape3", shape);
-            String imageLink = "https://cdn-icons-png.flaticon.com/512/73/73674.png";
+            String imageLink = "https://static.thenounproject.com/png/375209-200.png";
             intent.putExtra("image3", imageLink);
             startActivity(intent);
         } else if (position == 2) {
             String shape = listData.get(position).getShape();
             Intent intent = new Intent(requireContext(), calculator2.class);
             intent.putExtra("shape2", shape);
-            String imageLink = "https://cdn-icons-png.flaticon.com/512/73/73674.png";
+            String imageLink = "https://static-00.iconduck.com/assets.00/cone-icon-2048x2046-7oncc3vw.png";
             intent.putExtra("image2", imageLink);
             startActivity(intent);
         } else if (position == 3) {
             String shape = listData.get(position).getShape();
             Intent intent = new Intent(requireContext(), calculator1.class);
             intent.putExtra("shape1", shape);
-            String imageLink = "https://cdn-icons-png.flaticon.com/512/73/73674.png";
+            String imageLink = "https://static.thenounproject.com/png/104196-200.png";
             intent.putExtra("image1", imageLink);
             startActivity(intent);
         } else {

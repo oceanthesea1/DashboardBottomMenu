@@ -49,12 +49,12 @@ public class Fragment_Bangun_Datar extends Fragment implements MyAdapter.OnItemC
 
         Item item3 = new Item();
         item3.setShape("Triangle");
-        item3.setImage("https://cdn-icons-png.flaticon.com/512/73/73674.png");
+        item3.setImage("https://cdn.icon-icons.com/icons2/2518/PNG/512/triangle_icon_151032.png");
         listData.add(item3);
 
         Item item4 = new Item();
         item4.setShape("Circle");
-        item4.setImage("https://static.thenounproject.com/png/104196-200.png");
+        item4.setImage("https://cdn.icon-icons.com/icons2/2518/PNG/512/circle_icon_151453.png");
         listData.add(item4);
 
         adapter = new MyAdapter(getContext(), listData);
@@ -85,14 +85,14 @@ public class Fragment_Bangun_Datar extends Fragment implements MyAdapter.OnItemC
             String shape = listData.get(position).getShape();
             Intent intent = new Intent(requireContext(), calculator2.class);
             intent.putExtra("shape2", shape);
-            String imageLink = "https://cdn-icons-png.flaticon.com/512/73/73674.png";
+            String imageLink = "https://cdn.icon-icons.com/icons2/2518/PNG/512/triangle_icon_151032.png";
             intent.putExtra("image2", imageLink);
             startActivity(intent);
         } else if (position == 3) {
             String shape = listData.get(position).getShape();
             Intent intent = new Intent(requireContext(), calculator1.class);
             intent.putExtra("shape1", shape);
-            String imageLink = "https://static.thenounproject.com/png/104196-200.png";
+            String imageLink = "https://cdn.icon-icons.com/icons2/2518/PNG/512/circle_icon_151453.png";
             intent.putExtra("image1", imageLink);
             startActivity(intent);
         } else {
