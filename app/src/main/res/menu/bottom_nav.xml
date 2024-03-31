@@ -8,7 +8,7 @@
     <item
         android:id="@+id/menu_3d"
         android:title="3D"
-        android:icon="@android:drawable/ic_menu_save"/>
+        android:icon="@drawable/cube3d"/>
     <item
         android:id="@+id/menu_profile"
         android:title="Profile"

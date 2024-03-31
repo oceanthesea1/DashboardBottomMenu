@@ -1,6 +1,8 @@
 package com.example.dashboardbottommenu;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -52,6 +54,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.HolderData> {
         Glide.with(holder.itemView.getContext())
                 .load(item.getImage())
                 .into(holder.imageView);
+
+
+        holder.imageView.setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_ATOP);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

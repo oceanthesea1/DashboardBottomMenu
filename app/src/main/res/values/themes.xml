@@ -7,6 +7,7 @@
 
     <style name="AppTheme.Button_Logout" parent="Widget.AppCompat.Button">
         <item name="android:background">@drawable/button_logout</item>
+        <item name="backgroundTint">#40FFFFFF</item>
         <item name="android:textColor">@color/black</item>
     </style>
 
