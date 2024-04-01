@@ -74,28 +74,28 @@ public class Fragment_Bangun_Ruang extends Fragment implements MyAdapter.OnItemC
             String shape = listData.get(position).getShape();
             Intent intent = new Intent(requireContext(), calculator1.class);
             intent.putExtra("shape1", shape);
-            String imageLink = "https://cdn-icons-png.flaticon.com/512/73/73674.png";
+            String imageLink = listData.get(position).getImage();
             intent.putExtra("image1", imageLink);
             startActivity(intent);
         } else if (position == 1) {
             String shape = listData.get(position).getShape();
             Intent intent = new Intent(requireContext(), calculator3.class);
             intent.putExtra("shape3", shape);
-            String imageLink = "https://static.thenounproject.com/png/375209-200.png";
+            String imageLink = listData.get(position).getImage();
             intent.putExtra("image3", imageLink);
             startActivity(intent);
         } else if (position == 2) {
             String shape = listData.get(position).getShape();
             Intent intent = new Intent(requireContext(), calculator2.class);
             intent.putExtra("shape2", shape);
-            String imageLink = "https://static-00.iconduck.com/assets.00/cone-icon-2048x2046-7oncc3vw.png";
+            String imageLink = listData.get(position).getImage();
             intent.putExtra("image2", imageLink);
             startActivity(intent);
         } else if (position == 3) {
             String shape = listData.get(position).getShape();
             Intent intent = new Intent(requireContext(), calculator1.class);
             intent.putExtra("shape1", shape);
-            String imageLink = "https://static.thenounproject.com/png/104196-200.png";
+            String imageLink = listData.get(position).getImage();
             intent.putExtra("image1", imageLink);
             startActivity(intent);
         } else {

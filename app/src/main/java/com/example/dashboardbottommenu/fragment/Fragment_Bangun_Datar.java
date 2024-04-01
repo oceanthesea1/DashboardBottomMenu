@@ -75,28 +75,28 @@ public class Fragment_Bangun_Datar extends Fragment implements MyAdapter.OnItemC
             String shape = listData.get(position).getShape();
             Intent intent = new Intent(requireContext(), calculator1.class);
             intent.putExtra("shape1", shape);
-            String imageLink = "https://cdn.icon-icons.com/icons2/562/PNG/512/rounded-corners-square_icon-icons.com_53894.png";
+            String imageLink = listData.get(position).getImage();
             intent.putExtra("image1", imageLink);
             startActivity(intent);
         } else if (position == 1) {
             String shape = listData.get(position).getShape();
             Intent intent = new Intent(requireContext(), calculator2.class);
             intent.putExtra("shape2", shape);
-            String imageLink = "https://uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/rectangle-line-icon.png";
+            String imageLink = listData.get(position).getImage();
             intent.putExtra("image2", imageLink);
             startActivity(intent);
         } else if (position == 2) {
             String shape = listData.get(position).getShape();
             Intent intent = new Intent(requireContext(), calculator2.class);
             intent.putExtra("shape2", shape);
-            String imageLink = "https://cdn.icon-icons.com/icons2/2518/PNG/512/triangle_icon_151032.png";
+            String imageLink = listData.get(position).getImage();
             intent.putExtra("image2", imageLink);
             startActivity(intent);
         } else if (position == 3) {
             String shape = listData.get(position).getShape();
             Intent intent = new Intent(requireContext(), calculator1.class);
             intent.putExtra("shape1", shape);
-            String imageLink = "https://cdn.icon-icons.com/icons2/2518/PNG/512/circle_icon_151453.png";
+            String imageLink = listData.get(position).getImage();
             intent.putExtra("image1", imageLink);
             startActivity(intent);
         } else {
