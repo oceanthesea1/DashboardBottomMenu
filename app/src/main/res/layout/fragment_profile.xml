@@ -62,7 +62,7 @@
             <TextView
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:text="OceanTheSky"
+                android:text="Ocean Karuna Muryanto"
                 android:textSize="18dp"
                 android:textColor="#D3DAE2"/>
 
